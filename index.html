@@ -98,7 +98,7 @@
         <article class="detail reveal">
           <div class="detail-icon" aria-hidden="true">📍</div>
           <div class="detail-label">Lokasi</div>
-          <div class="detail-value" id="eventLocation">Segera diinformasikan</div>
+          <a class="detail-value location-direct-link" id="eventLocation" href="#" target="_blank" rel="noopener noreferrer">Segera diinformasikan ↗</a>
           <div class="detail-note" id="locationNote">Informasi tempat menyusul.</div>
           <a class="map-link" id="mapLink" href="#" target="_blank" rel="noopener noreferrer" hidden>Buka Google Maps ↗</a>
         </article>
@@ -185,10 +185,11 @@
 
     if (CONFIG.date) byId("eventDate").textContent = dateText();
     if (CONFIG.time) byId("eventTime").textContent = CONFIG.time;
-    if (CONFIG.location) byId("eventLocation").textContent = CONFIG.location;
+    if (CONFIG.location) byId("eventLocation").textContent = CONFIG.location + " ↗";
     if (CONFIG.address) byId("locationNote").textContent = CONFIG.address;
 
     if (CONFIG.mapsUrl) {
+      byId("eventLocation").href = CONFIG.mapsUrl;
       byId("mapLink").href = CONFIG.mapsUrl;
       byId("mapLink").hidden = false;
     }
