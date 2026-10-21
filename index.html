@@ -170,7 +170,7 @@
       location: "Rumah Munpi 😄",
       address: "Rumah Munpi",
       mapsUrl: "https://maps.app.goo.gl/ygDtLFL7L4fNwmQ16",
-      whatsapp: ""
+      whatsapp: "https://chat.whatsapp.com/G4rGbxmNgg97FfdveMu1lN"
     };
 
     const byId = (id) => document.getElementById(id);
@@ -196,17 +196,7 @@
 
     const rsvp = byId("rsvpButton");
     if (CONFIG.whatsapp) {
-      const message = [
-        "Halo, panitia 07AKSP002! 😊",
-        "",
-        "Saya mau konfirmasi undangan Ngeliwet Bersama.",
-        "Tanggal: " + dateText(),
-        "Waktu: " + (CONFIG.time || "Menyusul"),
-        "Lokasi: " + (CONFIG.location || "Menyusul"),
-        "",
-        "Terima kasih. Sampai jumpa!"
-      ].join("\n");
-      rsvp.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(message);
+      rsvp.href = CONFIG.whatsapp;
       rsvp.target = "_blank";
       rsvp.rel = "noopener noreferrer";
     } else {
